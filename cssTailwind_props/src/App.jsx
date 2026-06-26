@@ -4,28 +4,26 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
-export function Button({children , onClick}){
-  return(
-    <button onClick={onClick} className="text-black">
-      {children}
-    </button>
-  );
+export function Coder(props){
+  console.log(props);
+return(
+  <>
+  <p>{props.userName}</p>
+  <p>{props.Roll_No}</p>
+  </>
+)
 }
 
+
 export function App(){
+   let student = {
+    userName : "Aayus Regmi",
+    Roll_No : 8
+   }
+
   return(
     <>
-    <Button onClick={()=>{
-      alert("You clicked the first button!!")
-    }}>
-      first Button
-    </Button>
-
-    <Button onClick={()=>{
-      alert("You clicked the Second button!!")
-    }}>
-      Second Button
-    </Button>
+  <Coder {...student} />
     </>
   )
 }
