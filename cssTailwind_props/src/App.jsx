@@ -4,11 +4,29 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
-function App(){
+export function Button({children , onClick}){
+  return(
+    <button onClick={onClick} className="text-black">
+      {children}
+    </button>
+  );
+}
+
+export function App(){
   return(
     <>
-    <h1 className='text-amber-600 bg-green-500 rounded-xl text-center mb-3'>Tailwind</h1>
+    <Button onClick={()=>{
+      alert("You clicked the first button!!")
+    }}>
+      first Button
+    </Button>
+
+    <Button onClick={()=>{
+      alert("You clicked the Second button!!")
+    }}>
+      Second Button
+    </Button>
     </>
   )
 }
-export default App
+
