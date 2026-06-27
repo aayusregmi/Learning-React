@@ -4,26 +4,28 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
-export function Coder(props){
-  console.log(props);
+function Students({students}){
+  console.log(students);
 return(
   <>
-  <p>{props.userName}</p>
-  <p>{props.Roll_No}</p>
+  <ul>
+    {students.map((std)=>(
+      <li key={std.id} ><h1>{`Name of Student ${std.name} || Roll of Student ${std.roll}`}</h1></li>
+    ))}
+  </ul>
   </>
 )
 }
-
-
 export function App(){
-   let student = {
-    userName : "Aayus Regmi",
-    Roll_No : 8
-   }
+   let student = [
+    {id:100 , name:"Abhiskar" , roll:1},
+    {id:600 , name:"Aarogya" , roll:6},
+    {id:800 , name:"Aayus" , roll:8}
+   ]
 
   return(
     <>
-  <Coder {...student} />
+  <Students students = {student}/>
     </>
   )
 }
