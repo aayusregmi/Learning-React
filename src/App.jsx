@@ -1,9 +1,10 @@
-import Lemontea from "./App2"
+import {Cat , Dog} from './animal.jsx'
 const App = () => {
   return (
     <div>
-      <h1>Hello Aayus SO excited to learn React!!</h1>
-      <Lemontea />
+       <Cat/>
+       <Dog/>
+      <h2>Ma chai iniharuko owner</h2>
     </div>
   )
 }
